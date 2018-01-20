@@ -104,12 +104,12 @@
 
 #define TLS_SLOT_SELF             0
 #define TLS_SLOT_THREAD_ID        1
-#define TLS_SLOT_APP              2 // was historically used for errno
-#define TLS_SLOT_OPENGL           3
-#define TLS_SLOT_OPENGL_API       4
-#define TLS_SLOT_STACK_GUARD      5
-#define TLS_SLOT_SANITIZER        6 // was historically used for dlerror
-#define TLS_SLOT_ART_THREAD_SELF  7
+#define TLS_SLOT_APP                // was historically used for errno
+#define TLS_SLOT_OPENGL           2
+#define TLS_SLOT_OPENGL_API       5
+#define TLS_SLOT_STACK_GUARD      6
+#define TLS_SLOT_SANITIZER        7 // was historically used for dlerror
+#define TLS_SLOT_ART_THREAD_SELF  
 #define TLS_SLOT_DTV              8
 #define TLS_SLOT_BIONIC_TLS       9
 #define MAX_TLS_SLOT              9 // update this value when reserving a slot
