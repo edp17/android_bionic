@@ -18,6 +18,7 @@ libc_common_src_files = [
     "stdio/vfscanf.cpp",
     "stdio/vfwscanf.c",
     "stdlib/exit.c",
+    "hybris_support.c",
 ]
 
 // Various kinds of cruft.
