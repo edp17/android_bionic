@@ -4227,6 +4227,18 @@ std::vector<android_namespace_t*> init_default_namespaces(const char* executable
   }
 
   if (config == nullptr) {
+#ifdef SDK_VERSION_OVERRIDES
+    // Honour per-process legacy SDK compatibility when no linker config exists.
+    for (const auto& entry : android::base::Split(SDK_VERSION_OVERRIDES, " ")) {
+      auto splitted = android::base::Split(entry, "=");
+      if (splitted.size() == 2 && splitted[0] == executable_path) {
+        uint32_t target_sdk = static_cast<uint32_t>(std::stoul(splitted[1]));
+        set_application_target_sdk_version(target_sdk);
+        break;
+      }
+    }
+#endif
+
     return init_default_namespace_no_config(g_is_asan);
   }
 
